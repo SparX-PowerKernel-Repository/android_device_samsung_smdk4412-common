@@ -49,6 +49,7 @@ PRODUCT_COPY_FILES += \
 # Legacy GPS
 PRODUCT_PACKAGES += \
     android.hardware.gnss@1.0-impl \
+    android.hardware.gnss@1.0-service \
     gps.smdk4x12
 
 # Wifi
