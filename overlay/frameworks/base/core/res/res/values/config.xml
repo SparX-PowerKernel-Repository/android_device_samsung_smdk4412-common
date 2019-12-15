@@ -221,4 +221,9 @@
      <!-- Boolean indicating whether or not wifi firmware debugging is enabled -->
     <bool translatable="false" name="config_wifi_enable_wifi_firmware_debugging">false</bool>
      
+     <!-- Default files to pin via Pinner Service -->
+    <string-array translatable="false" name="config_defaultPinnerServiceFiles">
+        <item>"/system/lib/libsurfaceflinger.so"</item>
+	</string-array>
+     
 </resources>
