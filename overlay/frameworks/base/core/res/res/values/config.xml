@@ -200,6 +200,8 @@
         <item>XTRA_SERVER_1=https://gllto.glpals.com/7day/glo/v2/latest/lto2.dat</item>
         <item>XTRA_SERVER_2=https://xtra1.gpsonextra.net/xtra.bin</item>
         <item>XTRA_SERVER_3=https://gllto.glpals.com/30day/v2/latest/lto2.dat</item>
+        <item>XTRA_SERVER_4=https://ssl.gpsonextra.net/xtra3grc.bin</item>
+        <item>XTRA_SERVER_5=https://ssl.izatcloud.net/xtra3grc.bin</item>
    </string-array>
 
 <!-- Remote server that can provide NTP responses. -->
@@ -215,4 +217,8 @@
          your device's memory use without going to the point of causing applications to turn
          off features. -->
     <bool name="config_avoidGfxAccel">true</bool>
+    
+     <!-- Boolean indicating whether or not wifi firmware debugging is enabled -->
+    <bool translatable="false" name="config_wifi_enable_wifi_firmware_debugging">false</bool>
+     
 </resources>
