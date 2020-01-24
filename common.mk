@@ -62,14 +62,27 @@ PRODUCT_PROPERTY_OVERRIDES += \
     wifi.supplicant_scan_interval=180 \
     net.tethering.noprovisioning=true
 
+# RIL subscription workaround
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/restart_rild.sh:system/vendor/bin/restart_rild.sh \
+    $(LOCAL_PATH)/configs/rild_restart.rc:system/vendor/etc/init/rild_restart.rc
+
 # Gps
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/gps.conf:system/etc/gps.conf
 
+# USB
+PRODUCT_PACKAGES += \
+    android.hardware.usb@1.0-service.basic
+
+# Battery
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.config.small_battery=true
 
 # Packages
 PRODUCT_PACKAGES += \
     AdvancedDisplay \
+    android.hardware.light@2.0-service.samsung \
     vendor.lineage.livedisplay@2.0-service.samsung-exynos \
     android.hardware.graphics.allocator@2.0-impl-exynos4 \
     android.hardware.graphics.mapper@2.0-impl-exynos4 \
@@ -81,8 +94,6 @@ PRODUCT_PACKAGES += \
     audio.r_submix.default \
     audio.usb.default \
     android.hardware.keymaster@3.0-impl \
-    android.hardware.light@2.0-impl \
-    android.hardware.light@2.0-service \
     android.hardware.bluetooth@1.0-impl \
     android.hardware.vibrator@1.0-impl \
     libbt-vendor \
@@ -102,10 +113,8 @@ PRODUCT_PACKAGES += \
     libhwjpeg \
     libnetcmdiface \
     libsecion \
-    libstlport \
     libsync \
     libUMP \
-    lights.smdk4x12 \
     macloader \
     tinymix \
     libstagefright-shim \
@@ -159,7 +168,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.qti.sys.fw.use_trim_settings=true \
     ro.vendor.qti.sys.fw.trim_empty_percent=50 \
     ro.vendor.qti.sys.fw.trim_cache_percent=100 \
-    ro.vendor.qti.sys.fw.empty_app_percent=2
+    ro.vendor.qti.sys.fw.empty_app_percent=25
 
 # Filesystem management tools
 PRODUCT_PACKAGES += \
